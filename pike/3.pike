@@ -6,10 +6,13 @@
 
 int find_factor(int n)
 {
-    for (int i = 2; i < n; i++)
+    for (int i = 2; i < n; i += 2)
     {
         if (n % i == 0)
             return i;
+
+        if (i == 2)
+            i++;
     }
     return n;
 }
