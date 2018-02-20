@@ -37,7 +37,7 @@ int smallest_div(int n)
     if (n == 1)
         return 1;
 
-    // it must divide by all the primes small than n
+    // it must divide by all primes smaller than n
     int step = `*(@find_primes(n));
 
     int k = 0;
