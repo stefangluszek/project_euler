@@ -61,4 +61,5 @@ int smallest_div(int n)
 int main()
 {
     werror("%d\n", smallest_div(20));
+    return 0;
 }

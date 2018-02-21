@@ -26,4 +26,5 @@ int largest_palindrome(int digits)
 int main()
 {
     werror("%d\n", largest_palindrome(3));
+    return 0;
 }

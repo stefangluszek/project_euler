@@ -35,4 +35,5 @@ int main()
 {
     int n = 600851475143;
     werror("%O\n", largest_factor(n));
+    return 0;
 }
