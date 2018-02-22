@@ -1,13 +1,10 @@
 int sum_sq_diff(int n)
 {
-    int sum_of_squares = 0;
-    int square_of_sum = 0;
+    // sum of squares: Sn = (n * (n + 1) * (2n +1)) / 6
+    int sum_of_squares = (n * (n + 1) * (2 * n + 1)) / 6;
+    // sum of n:  Sn = n(n + 1)/2
+    int square_of_sum = n * (n +1) / 2;
 
-    for (int i = 1; i <= n; i++)
-    {
-        sum_of_squares += pow(i, 2);
-        square_of_sum += i;
-    }
     return pow(square_of_sum, 2) - sum_of_squares;
 }
 
