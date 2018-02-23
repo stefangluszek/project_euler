@@ -35,7 +35,6 @@ array(int) find_primes(int n)
 //! A much faster solution would be to use the sieve of Eratosthenes.
 int nth_prime(int n)
 {
-    int counter;
     if (n < 1)
         return -1;
     if (n == 1)
@@ -48,7 +47,6 @@ int nth_prime(int n)
         bool is_prime = true;
         foreach (found_primes, int p)
         {
-            counter++;
             if (i % p == 0)
             {
                 is_prime = false;
@@ -61,4 +59,38 @@ int nth_prime(int n)
     }
 
     return found_primes[-1];
+}
+
+int nth_prime_sieve(int n)
+{
+    mapping(int:bool) removed = ([ ]);
+    //! Not sure if there is a good way of knowing what's the highest
+    //! possible value of the nth prime. For now, until I find out use
+    //! an arbitrary number that works for 10001 primes.
+    int limit = 12 * n;
+    int last_prime;
+    int found_primes;
+
+    void remove_multiples_of(int k)
+    {
+        for (int i = k; i < limit; i += k)
+            removed[i] = 1;
+    };
+
+    if (n < 1)
+        return -1;
+
+    int i = 2;
+    while (found_primes < n)
+    {
+        i++;
+        if (!removed[i])
+        {
+            found_primes++;
+            last_prime = i;
+            remove_multiples_of(i);
+        }
+    }
+
+    return last_prime;
 }
