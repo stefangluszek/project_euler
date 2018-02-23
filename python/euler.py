@@ -1,6 +1,6 @@
 def find_n_primes(n):
   """Returns a set containing all primes that are smaller than n.
-  NOTE: O(N^2)
+  NOTE: O(N log N)
   """
   primes = [ ]
 
