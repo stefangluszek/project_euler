@@ -22,13 +22,12 @@ int largest_product(string d)
         if (!last_product)
         {
             last_product = `*(@digits[i..j]);
-            max_product = max(last_product, max_product);
         }
         else
         {
             last_product = last_product / digits[i-1] * digits[j];
-            max_product = max(max_product, last_product);
         }
+        max_product = max(max_product, last_product);
     }
     return max_product;
 }
@@ -49,6 +48,7 @@ int largest_product_split_by_0(string d)
     }
     return largest;
 }
+
 int main()
 {
     string data = Stdio.read_file("./data/8.txt");
